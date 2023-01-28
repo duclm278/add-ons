@@ -1,20 +1,30 @@
-! Facebook
+! Facebook: Buttons
 facebook.com##li:has([aria-label="Watch"])
 facebook.com##li:has([aria-label="Marketplace"])
 facebook.com##li:has([aria-label="Gaming"])
 facebook.com##[href^="https://www.facebook.com/watch/"]
 facebook.com##[href^="https://www.facebook.com/marketplace/"]
 facebook.com##[href^="https://www.facebook.com/gaming/"]
-facebook.com##:matches-path(/^/$/) span[id="ssrb_feed_start"]:upward(1)
-facebook.com##:matches-path(/?sk=nf) span[id="ssrb_feed_start"]:upward(1)
+
+! Facebook: Main's posts
+facebook.com##:matches-path(/^/$/) [role="main"] h3:has-text(News Feed posts):upward(1)
+facebook.com##:matches-path(/?sk=nf) [role="main"] h3:has-text(News Feed posts):upward(1)
+
+! Facebook: Main's sponsored
 facebook.com##:matches-path(/^/$/) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
 facebook.com##:matches-path(/?sk=nf) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
+
+! Facebook: Main's stories
 facebook.com##:matches-path(/^/$/) [role="main"] > div > div > div > div:has(div[role="tablist"])
 facebook.com##:matches-path(/?sk=nf) [role="main"] > div > div > div > div:has(div[role="tablist"])
-facebook.com##:matches-path(/watch) [aria-label="Videos on Facebook Watch"][role="main"]
+
+! Facebook: Group's recommendations
 facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(Recent activity):upward(8)
 facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(More from groups):upward(8)
 facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(See more):upward(8)
+
+! Facebook: Other media feeds
+facebook.com##:matches-path(/watch) [aria-label="Videos on Facebook Watch"][role="main"]
 facebook.com##:matches-path(/gaming) [aria-label="Gaming"][role="main"]
 
 ! YouTube
