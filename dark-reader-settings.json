@@ -28,8 +28,9 @@
     "siteList": [
         "github.com",
         "www.facebook.com",
-        "www.reddit.com",
-        "docs.google.com"
+        "docs.google.com",
+        "dynalist.io",
+        "fullstackopen.com"
     ],
     "siteListEnabled": [
         "education.github.com",

@@ -15,8 +15,8 @@ facebook.com##:matches-path(/^/$/) [role="complementary"] > div > div > div > di
 facebook.com##:matches-path(/?sk=nf) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
 
 ! Facebook: Main's stories
-facebook.com##:matches-path(/^/$/) [role="main"] > div > div > div > div:has(div[role="tablist"])
-facebook.com##:matches-path(/?sk=nf) [role="main"] > div > div > div > div:has(div[role="tablist"])
+facebook.com##:matches-path(/^/$/) [role="main"] > div > div > div > div:has(div[aria-label="Stories"])
+facebook.com##:matches-path(/?sk=nf) [role="main"] > div > div > div > div:has(div[aria-label="Stories"])
 
 ! Facebook: Group's recommendations
 facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(Recent activity):upward(8)
