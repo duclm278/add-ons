@@ -1,4 +1,5 @@
 ! Facebook: Buttons
+facebook.com##li:has([aria-label="Video"])
 facebook.com##li:has([aria-label="Watch"])
 facebook.com##li:has([aria-label="Marketplace"])
 facebook.com##li:has([aria-label="Gaming"])
@@ -6,17 +7,13 @@ facebook.com##[href^="https://www.facebook.com/watch/"]
 facebook.com##[href^="https://www.facebook.com/marketplace/"]
 facebook.com##[href^="https://www.facebook.com/gaming/"]
 
-! Facebook: Main's posts
-facebook.com##:matches-path(/^/$/) [role="main"] h3:has-text(News Feed posts):upward(1)
-facebook.com##:matches-path(/?sk=nf) [role="main"] h3:has-text(News Feed posts):upward(1)
+! Facebook: Main
+facebook.com##:matches-path(/^/$/) [role="main"]
+facebook.com##:matches-path(/?sk=nf) [role="main"]
 
 ! Facebook: Main's sponsored
 facebook.com##:matches-path(/^/$/) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
 facebook.com##:matches-path(/?sk=nf) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
-
-! Facebook: Main's stories
-facebook.com##:matches-path(/^/$/) [role="main"] > div > div > div > div:has(div[aria-label="Stories"])
-facebook.com##:matches-path(/?sk=nf) [role="main"] > div > div > div > div:has(div[aria-label="Stories"])
 
 ! Facebook: Group's recommendations
 facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(Recent activity):upward(8)
@@ -44,4 +41,3 @@ tiktok.com##div[class*="DivUserContainer"]:has(p:has-text(/^Suggested accounts|T
 tiktok.com##div[class*="DivVideoList"]:has(p:has-text(/^Related videos|Video có liên quan$/))
 tiktok.com##:matches-path(/foryou) div[class*="DivMainContainer"]
 tiktok.com##:matches-path(/live) body:remove()
-
