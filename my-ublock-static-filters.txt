@@ -8,84 +8,29 @@ facebook.com##[href^="https://www.facebook.com/marketplace/"]
 facebook.com##[href^="https://www.facebook.com/gaming/"]
 
 ! Facebook: Main
-facebook.com##:matches-path(/^/$/) [role="main"]
-facebook.com##:matches-path(/?sk=nf) [role="main"]
+facebook.com##h3:has-text(News Feed):upward(3)
 
 ! Facebook: Main's sponsored
-facebook.com##:matches-path(/^/$/) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
-facebook.com##:matches-path(/?sk=nf) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
+facebook.com##[role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
 
 ! Facebook: Group's recommendations
-facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(Recent activity):upward(8)
-facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(More from groups):upward(8)
-facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(See more):upward(8)
+facebook.com##[aria-label="Preview of a group"][role="main"] span:has-text(Recent activity):upward(8)
+facebook.com##[aria-label="Preview of a group"][role="main"] span:has-text(More from groups):upward(8)
+facebook.com##[aria-label="Preview of a group"][role="main"] span:has-text(See more):upward(8)
 
 ! Facebook: Other media feeds
-facebook.com##:matches-path(/watch) [aria-label="Videos on Facebook Watch"][role="main"]
-facebook.com##:matches-path(/gaming) [aria-label="Gaming"][role="main"]
+facebook.com##[aria-label="Video"][role="main"]
+facebook.com##[aria-label="Gaming"][role="main"]
 
 ! YouTube
 youtube.com###endpoint[title="Shorts"]
 youtube.com###endpoint[title="Explore"]
 youtube.com##ytd-guide-section-renderer:has(h3:has-text(Explore))
-youtube.com##:matches-path(/^/$/) ytd-browse
-youtube.com##:matches-path(/feed/explore) ytd-browse
-! youtube.com##:matches-path(/shorts) ytd-browse, ytd-shorts:remove()
+youtube.com##ytd-browse[page-subtype="home"]
+youtube.com##ytd-shorts:remove()
 
 ! TikTok
-tiktok.com##div[class*="DivDiscoverContainer"]
-tiktok.com##:matches-path(/^/$/) div[class*="DivMainContainer"]
-tiktok.com##:matches-path(/en) div[class*="DivMainContainer"]
-tiktok.com##:matches-path(/vi-VN) div[class*="DivMainContainer"]
-tiktok.com##div[class*="DivUserContainer"]:has(p:has-text(/^Suggested accounts|Tài khoản được đề xuất$/))
-tiktok.com##div[class*="DivVideoList"]:has(p:has-text(/^Related videos|Video có liên quan$/))
-tiktok.com##:matches-path(/foryou) div[class*="DivMainContainer"]
-tiktok.com##:matches-path(/live) body:remove()
-
-! Facebook: Buttons
-facebook.com##li:has([aria-label="Video"])
-facebook.com##li:has([aria-label="Watch"])
-facebook.com##li:has([aria-label="Marketplace"])
-facebook.com##li:has([aria-label="Gaming"])
-facebook.com##[href^="https://www.facebook.com/watch/"]
-facebook.com##[href^="https://www.facebook.com/marketplace/"]
-facebook.com##[href^="https://www.facebook.com/gaming/"]
-
-! Facebook: Main's posts
-facebook.com##:matches-path(/^/$/) [role="main"] h3:has-text(News Feed posts):upward(1)
-facebook.com##:matches-path(/?sk=nf) [role="main"] h3:has-text(News Feed posts):upward(1)
-
-! Facebook: Main's sponsored
-facebook.com##:matches-path(/^/$/) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
-facebook.com##:matches-path(/?sk=nf) [role="complementary"] > div > div > div > div > div:has(span:has-text(Sponsored))
-
-! Facebook: Main's stories
-facebook.com##:matches-path(/^/$/) [role="main"] > div > div > div > div:has(div[aria-label="Stories"])
-facebook.com##:matches-path(/?sk=nf) [role="main"] > div > div > div > div:has(div[aria-label="Stories"])
-
-! Facebook: Group's recommendations
-facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(Recent activity):upward(8)
-facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(More from groups):upward(8)
-facebook.com##:matches-path(/groups/feed) [aria-label="Preview of a group"][role="main"] span:has-text(See more):upward(8)
-
-! Facebook: Other media feeds
-facebook.com##:matches-path(/watch) [aria-label="Videos on Facebook Watch"][role="main"]
-facebook.com##:matches-path(/gaming) [aria-label="Gaming"][role="main"]
-
-! YouTube
-youtube.com###endpoint[title="Shorts"]
-youtube.com###endpoint[title="Explore"]
-youtube.com##ytd-guide-section-renderer:has(h3:has-text(Explore))
-youtube.com##:matches-path(/^/$/) ytd-browse
-youtube.com##:matches-path(/feed/explore) ytd-browse
-! youtube.com##:matches-path(/shorts) ytd-browse, ytd-shorts:remove()
-
-! TikTok
-tiktok.com##div[class*="DivDiscoverContainer"]
-tiktok.com##:matches-path(/^/$/) div[class*="DivMainContainer"]
-tiktok.com##:matches-path(/en) div[class*="DivMainContainer"]
-tiktok.com##:matches-path(/vi-VN) div[class*="DivMainContainer"]
-tiktok.com##div[class*="DivUserContainer"]:has(p:has-text(/^Suggested accounts|Tài khoản được đề xuất$/))
-tiktok.com##div[class*="DivVideoList"]:has(p:has-text(/^Related videos|Video có liên quan$/))
-tiktok.com##:matches-path(/foryou) div[class*="DivMainContainer"]
-tiktok.com##:matches-path(/live) body:remove()
+tiktok.com###main-content-explore_page:upward(2):remove()
+tiktok.com###main-content-homepage_follow
+tiktok.com###main-content-homepage_hot
+tiktok.com###tiktok-live-main-container-id:upward(2):remove()
